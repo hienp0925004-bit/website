@@ -32,578 +32,80 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-teal-500 selection:text-white">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-slate-200 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#" class="text-2xl font-bold text-slate-900 tracking-tight">
-                    <span class="text-teal-600">ThS.</span> Hiền
-                </a>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 font-medium">
-                    <a href="#home" class="hover:text-teal-600 transition-colors">Trang chủ</a>
-                    <a href="#about" class="hover:text-teal-600 transition-colors">Về tôi</a>
-                    <a href="#skills" class="hover:text-teal-600 transition-colors">Kỹ năng</a>
-                    <a href="#projects" class="hover:text-teal-600 transition-colors">Nghiên cứu</a>
-                    <a href="#contact" class="hover:text-teal-600 transition-colors">Liên hệ</a>
-                    <button onclick="openShareModal()" class="px-4 py-2 rounded-full bg-teal-50 text-teal-700 hover:bg-teal-100 transition-colors text-sm font-bold cursor-pointer border border-teal-100">
-                        <i class="fas fa-share-alt mr-1"></i> Chia sẻ
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="menu-btn" class="md:hidden text-slate-900 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+    <!-- Header / Navbar -->
+    <header class="glass-nav fixed top-0 left-0 w-full z-50 shadow-sm">
+        <nav class="max-w-5xl mx-auto flex justify-between items-center py-4 px-4">
+            <h1 class="text-xl font-semibold gradient-text">Hien • Weedy Rice</h1>
+            <div class="space-x-6 text-slate-700 font-medium">
+                <a href="#about" class="hover:text-teal-600">Giới thiệu</a>
+                <a href="#research" class="hover:text-teal-600">Nghiên cứu</a>
+                <a href="#contact" class="hover:text-teal-600">Liên hệ</a>
             </div>
-            
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 flex-col space-y-4 pb-4 text-center font-medium bg-white rounded-lg shadow-lg p-4 absolute left-4 right-4 top-16">
-                <a href="#home" class="block hover:text-teal-600 py-2 border-b border-slate-100">Trang chủ</a>
-                <a href="#about" class="block hover:text-teal-600 py-2 border-b border-slate-100">Về tôi</a>
-                <a href="#skills" class="block hover:text-teal-600 py-2 border-b border-slate-100">Kỹ năng</a>
-                <a href="#projects" class="block hover:text-teal-600 py-2 border-b border-slate-100">Nghiên cứu</a>
-                <a href="#contact" class="block hover:text-teal-600 py-2">Liên hệ</a>
-                <button onclick="openShareModal()" class="block w-full text-left hover:text-teal-600 py-2 text-teal-600 font-semibold">
-                    <i class="fas fa-share-alt mr-1"></i> Chia sẻ / Lấy Link
-                </button>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-        <!-- Background blobs -->
-        <div class="absolute top-20 left-0 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-        <div class="absolute top-20 right-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-
-        <div class="container mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12 z-10">
-            <div class="md:w-1/2 text-center md:text-left">
-                <p class="text-teal-600 font-semibold mb-2 text-lg">Xin chào, tôi là</p>
-                <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">
-                    Đinh Thị Bé <span class="gradient-text">Hiền</span>
-                </h1>
-                <p class="text-xl md:text-2xl text-slate-600 mb-6 font-medium">Thạc sĩ Công Nghệ Sinh Học & Giảng Viên</p>
-                <p class="text-slate-500 mb-8 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                    Giảng viên tại Đại học Kiên Giang với niềm đam mê sâu sắc trong nghiên cứu Vi sinh môi trường và Sinh học phân tử. Cam kết mang lại giá trị thực tiễn cho cộng đồng thông qua khoa học.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <a href="#contact" class="px-8 py-3 bg-teal-600 text-white rounded-full font-semibold hover:bg-teal-700 transition-all shadow-lg hover:shadow-teal-500/30 flex items-center justify-center gap-2">
-                        <i class="fas fa-envelope"></i> Liên hệ hợp tác
-                    </a>
-                    <a href="#skills" class="px-8 py-3 bg-white text-slate-700 border border-slate-300 rounded-full font-semibold hover:bg-slate-50 transition-all shadow-sm flex items-center justify-center gap-2">
-                        <i class="fas fa-microscope"></i> Xem năng lực
-                    </a>
-                </div>
-                
-                <div class="mt-10 flex gap-6 justify-center md:justify-start text-slate-400">
-                    <a href="#" class="hover:text-teal-600 text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="hover:text-teal-600 text-2xl transition-colors"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="hover:text-teal-600 text-2xl transition-colors"><i class="fas fa-graduation-cap"></i></a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center relative">
-                <div class="relative w-64 h-64 md:w-96 md:h-96">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-teal-500 to-blue-500 rounded-full transform rotate-6 opacity-20"></div>
-                    <img src="https://ui-avatars.com/api/?name=Dinh+Thi+Be+Hien&background=0f766e&color=fff&size=512" alt="Avatar" class="w-full h-full rounded-full object-cover border-4 border-white shadow-2xl relative z-10">
-                    <!-- Experience Badge -->
-                    <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-3 animate-bounce duration-[3000ms]">
-                        <div class="bg-teal-100 p-2 rounded-full text-teal-600">
-                            <i class="fas fa-flask text-xl"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-slate-500">Kinh nghiệm</p>
-                            <p class="font-bold text-slate-900">4 Năm</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="pt-32 pb-20 text-center">
+        <h2 class="text-4xl font-bold gradient-text">Đinh Thị Bé Hiền</h2>
+        <p class="mt-4 text-lg max-w-2xl mx-auto text-slate-600">
+            Thạc sĩ Công nghệ Sinh học — Giảng viên Đại học  
+            Chuyên ngành: Vi sinh môi trường • Sinh học phân tử • Weedy Rice
+        </p>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Lý lịch sơ lược</h2>
-                <div class="w-20 h-1 bg-teal-600 mx-auto mt-4 rounded-full"></div>
-            </div>
-            
-            <div class="mt-12 bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Personal Info -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                            <i class="fas fa-user-circle text-teal-600"></i> Thông tin cá nhân
-                        </h3>
-                        <ul class="space-y-4 text-slate-700">
-                            <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-200 pb-2">
-                                <span class="w-40 font-bold text-slate-900">Họ và tên:</span>
-                                <span>Đinh Thị Bé Hiền</span>
-                            </li>
-                            <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-200 pb-2">
-                                <span class="w-40 font-bold text-slate-900">Ngày sinh:</span>
-                                <span>25/11/1990</span>
-                            </li>
-                            <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-200 pb-2">
-                                <span class="w-40 font-bold text-slate-900">Nơi sinh:</span>
-                                <span>Bến Tre</span>
-                            </li>
-                            <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-200 pb-2">
-                                <span class="w-40 font-bold text-slate-900">Quê quán:</span>
-                                <span>Xã Hương Mỹ, tỉnh Vĩnh Long</span>
-                            </li>
-                            <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-200 pb-2">
-                                <span class="w-40 font-bold text-slate-900">Địa chỉ:</span>
-                                <span>80C, đường 3/2, Ninh Kiều, Cần Thơ</span>
-                            </li>
-                            <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-200 pb-2">
-                                <span class="w-40 font-bold text-slate-900">Email:</span>
-                                <span class="text-teal-700 font-medium">hiencnsh2008@gmail.com</span>
-                            </li>
-                             <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 border-b border-slate-200 pb-2">
-                                <span class="w-40 font-bold text-slate-900">Điện thoại:</span>
-                                <span>0947.801.178</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Education & Work -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                            <i class="fas fa-graduation-cap text-teal-600"></i> Quá trình đào tạo & Công tác
-                        </h3>
-                        <div class="space-y-8">
-                            <!-- Master -->
-                            <div class="relative pl-8 border-l-2 border-teal-200">
-                                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-teal-600 rounded-full"></div>
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <h4 class="font-bold text-lg text-slate-900">Thạc sĩ Công Nghệ Sinh Học</h4>
-                                        <p class="text-slate-600">Đại học Cần Thơ - Hệ Chính quy</p>
-                                    </div>
-                                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-2 py-1 rounded">2014</span>
-                                </div>
-                            </div>
-
-                            <!-- Bachelor -->
-                            <div class="relative pl-8 border-l-2 border-teal-200">
-                                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-white border-2 border-teal-600 rounded-full"></div>
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <h4 class="font-bold text-lg text-slate-900">Cử nhân Công Nghệ Sinh Học</h4>
-                                        <p class="text-slate-600">Đại học Cần Thơ - Hệ Chính quy</p>
-                                    </div>
-                                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-2 py-1 rounded">2012</span>
-                                </div>
-                            </div>
-
-                            <!-- Work -->
-                            <div class="relative pl-8 border-l-2 border-teal-200">
-                                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-white border-2 border-teal-600 rounded-full"></div>
-                                <div class="flex justify-between items-start">
-                                    <div>
-                                        <h4 class="font-bold text-lg text-slate-900">Giảng viên</h4>
-                                        <p class="text-slate-600">Trường Đại học Kiên Giang</p>
-                                    </div>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">2014 - 2018</span>
-                                </div>
-                            </div>
-
-                             <!-- Language -->
-                            <div class="relative pl-8 border-l-2 border-teal-200">
-                                <div class="absolute -left-[9px] top-0 w-4 h-4 bg-white border-2 border-teal-600 rounded-full"></div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-900">Ngoại ngữ</h4>
-                                    <p class="text-slate-600">Tiếng Anh - Chứng chỉ B2 VSTEP</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="about" class="max-w-4xl mx-auto px-4 py-10">
+        <h3 class="text-2xl font-semibold mb-4">Giới thiệu</h3>
+        <p class="text-slate-700 leading-relaxed">
+            Tôi là giảng viên và nhà nghiên cứu trong lĩnh vực Công nghệ Sinh học, tập trung vào 
+            vi sinh vật môi trường, phân tích hệ gen và đặc biệt là nghiên cứu lúa cỏ (weedy rice) 
+            bằng các kỹ thuật sinh học phân tử hiện đại như SSR, SNP, GWAS.
+        </p>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Kỹ năng & Chuyên môn</h2>
-                <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Kết hợp kiến thức chuyên sâu và kỹ năng thực hành trong phòng thí nghiệm.</p>
-            </div>
+    <!-- Research Section -->
+    <section id="research" class="max-w-4xl mx-auto px-4 py-10">
+        <h3 class="text-2xl font-semibold mb-4">Nghiên cứu</h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                        <i class="fas fa-flask text-teal-600"></i> Kỹ thuật Phòng Thí nghiệm
-                    </h3>
-                    <div class="space-y-6">
-                        <!-- Skill Bar -->
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium">Vi sinh môi trường & Phân lập</span>
-                                <span class="text-teal-600 font-bold">95%</span>
-                            </div>
-                            <div class="w-full bg-slate-200 rounded-full h-2.5">
-                                <div class="bg-teal-600 h-2.5 rounded-full" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium">Kỹ thuật PCR / RT-PCR</span>
-                                <span class="text-teal-600 font-bold">90%</span>
-                            </div>
-                            <div class="w-full bg-slate-200 rounded-full h-2.5">
-                                <div class="bg-teal-600 h-2.5 rounded-full" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium">Điện di DNA & Phân tích gen</span>
-                                <span class="text-teal-600 font-bold">85%</span>
-                            </div>
-                            <div class="w-full bg-slate-200 rounded-full h-2.5">
-                                <div class="bg-teal-600 h-2.5 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="font-medium">Nuôi cấy mô & Tế bào</span>
-                                <span class="text-teal-600 font-bold">80%</span>
-                            </div>
-                            <div class="w-full bg-slate-200 rounded-full h-2.5">
-                                <div class="bg-teal-600 h-2.5 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
-                        <i class="fas fa-tools text-purple-600"></i> Kỹ năng Bổ trợ
-                    </h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
-                            <i class="fas fa-chalkboard-teacher text-orange-500 text-2xl"></i>
-                            <span class="font-medium">Sư phạm ĐH</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
-                            <i class="fas fa-chart-bar text-purple-500 text-2xl"></i>
-                            <span class="font-medium">Xử lý số liệu (SPSS/R)</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
-                            <i class="fas fa-file-alt text-blue-500 text-2xl"></i>
-                            <span class="font-medium">Viết báo cáo KH</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
-                            <i class="fas fa-users text-green-500 text-2xl"></i>
-                            <span class="font-medium">Quản lý nhóm</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
-                            <i class="fas fa-language text-indigo-500 text-2xl"></i>
-                            <span class="font-medium">Tiếng Anh Chuyên ngành</span>
-                        </div>
-                        <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex items-center gap-3">
-                            <i class="fas fa-project-diagram text-yellow-500 text-2xl"></i>
-                            <span class="font-medium">Quản lý dự án</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Công trình & Nghiên cứu</h2>
-                <p class="text-slate-500 mt-4">Các đề tài, bài báo khoa học và sách giáo trình đã công bố.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="h-48 bg-slate-100 relative overflow-hidden">
-                         <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center text-white text-5xl">
-                            <i class="fas fa-water"></i>
-                         </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded uppercase tracking-wider">Đề tài cấp Bộ</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-blue-600 transition-colors">Đa dạng Rong biển Phú Quốc</h3>
-                        <p class="text-slate-600 text-sm mb-4">
-                            Khảo sát sự đa dạng của rong biển có giá trị kinh tế ở vùng biển Phú Quốc, Việt Nam.
-                        </p>
-                        <div class="border-t border-slate-100 pt-4 mt-4">
-                            <div class="flex items-center justify-between text-xs text-slate-500">
-                                <span>Mã số: B2016-KGU-01</span>
-                                <span class="bg-green-100 text-green-700 px-2 py-1 rounded">Hoàn thành</span>
-                            </div>
-                            <p class="text-xs text-slate-500 mt-2">Vai trò: Thành viên</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="h-48 bg-slate-100 relative overflow-hidden">
-                         <div class="absolute inset-0 bg-gradient-to-br from-teal-400 to-emerald-600 flex items-center justify-center text-white text-5xl">
-                            <i class="fas fa-flask"></i>
-                         </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-teal-600 bg-teal-50 px-2 py-1 rounded uppercase tracking-wider">Bài báo Khoa học</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-teal-600 transition-colors">Phân bố Rong lục (Chlorophyta)</h3>
-                        <p class="text-slate-600 text-sm mb-4 line-clamp-3">
-                            Đinh Thị Bé Hiền et al. Khảo sát thành phần loài và phân bố ngành rong lục ở khu vực ven đảo Phú Quốc.
-                        </p>
-                        <div class="border-t border-slate-100 pt-4 mt-4">
-                            <p class="text-xs text-slate-500 italic">Tạp chí Khoa học Công nghệ Nông nghiệp Việt Nam, 2018, 2(87), 11-17.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="h-48 bg-slate-100 relative overflow-hidden">
-                         <div class="absolute inset-0 bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white text-5xl">
-                            <i class="fas fa-book"></i>
-                         </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-orange-600 bg-orange-50 px-2 py-1 rounded uppercase tracking-wider">Sách Giáo Trình</span>
-                        <h3 class="text-xl font-bold mt-2 mb-2 group-hover:text-orange-600 transition-colors">Vi sinh vật môi trường</h3>
-                        <p class="text-slate-600 text-sm mb-4">
-                            Đồng tác giả: Huỳnh Văn Tiền, Vũ Văn Long, Đinh Thị Bé Hiền. Tài liệu giảng dạy chuyên ngành.
-                        </p>
-                        <div class="border-t border-slate-100 pt-4 mt-4">
-                             <p class="text-xs text-slate-500">NXB Đại học Cần Thơ, 2022</p>
-                             <p class="text-xs text-slate-500 mt-1">ISBN: 978-604-965-989-8</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Other Publications List -->
-            <div class="mt-16 bg-slate-50 rounded-2xl p-8 border border-slate-200">
-                <h3 class="text-xl font-bold text-slate-900 mb-6"><i class="fas fa-list-ul mr-2 text-teal-600"></i>Công bố khoa học khác</h3>
-                <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-lg shadow-sm border border-slate-100">
-                         <p class="text-slate-700 text-sm leading-relaxed">
-                            <span class="font-bold text-slate-900">Huỳnh Văn Tiền, Đinh Thị Bé Hiền, Cao Ngọc Điệp.</span> 
-                            Tối ưu hóa khả năng tổng hợp chất kết tụ sinh học từ dòng vi khuẩn <em>Bacillus megaterium</em> Long An 51 và thử nghiệm xử lý nước thải sau biogas chuồng trại chăn nuôi heo. 
-                            <span class="italic text-teal-700">Tạp chí Nông nghiệp và phát triển Nông thôn, 2014, 13, 66-71.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ul class="list-disc ml-5 text-slate-700 space-y-2">
+            <li>Đa dạng di truyền và cấu trúc quần thể lúa cỏ bằng SSR/SNP</li>
+            <li>Xác định gen/ QTL liên quan đến tính trạng chịu mặn</li>
+            <li>Ứng dụng GWAS trong nghiên cứu lúa cỏ</li>
+            <li>Phân tích vi sinh môi trường bằng phương pháp phân tử</li>
+        </ul>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-900 text-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="text-4xl font-bold mb-6">Liên hệ & Hợp tác</h2>
-                    <p class="text-slate-400 mb-10 text-lg">
-                        Tôi luôn sẵn sàng trao đổi về các đề tài nghiên cứu, giảng dạy và hợp tác khoa học. Vui lòng liên hệ qua các thông tin dưới đây.
-                    </p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-teal-400 text-xl">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-slate-400">Email</p>
-                                <p class="font-semibold text-lg">hiencnsh2008@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-teal-400 text-xl">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-slate-400">Điện thoại</p>
-                                <p class="font-semibold text-lg">0947.801.178</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-teal-400 text-xl">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <p class="text-sm text-slate-400">Địa chỉ liên lạc</p>
-                                <p class="font-semibold text-lg">80C, đường 3/2, Cần Thơ</p>
-                            </div>
-                        </div>
-                    </div>
+    <section id="contact" class="max-w-4xl mx-auto px-4 py-10">
+        <h3 class="text-2xl font-semibold mb-4">Liên hệ</h3>
 
-                    <div class="mt-10">
-                        <p class="mb-4 text-slate-400">Kết nối mạng xã hội:</p>
-                        <div class="flex gap-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-teal-600 transition-colors"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
+        <p class="text-slate-700">
+            <i class="fa-solid fa-envelope text-teal-500"></i>  
+            <b>Email:</b> hienp0925004@gmail.com
+        </p>
 
-                <div class="bg-white p-8 rounded-2xl text-slate-900 shadow-2xl">
-                    <form action="#" onsubmit="event.preventDefault(); alert('Cảm ơn bạn đã liên hệ! Tôi sẽ phản hồi sớm nhất.');">
-                        <h3 class="text-2xl font-bold mb-6">Gửi tin nhắn</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Họ và tên</label>
-                                <input type="text" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="Nhập tên của bạn">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                                <input type="email" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all" placeholder="Nhập email của bạn">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-slate-700 mb-1">Nội dung</label>
-                                <textarea class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-teal-500 focus:ring-2 focus:ring-teal-200 outline-none transition-all h-32 resize-none" placeholder="Bạn muốn trao đổi về vấn đề gì?"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-teal-600 text-white font-bold py-3 rounded-lg hover:bg-teal-700 transition-colors shadow-lg shadow-teal-600/30">
-                                Gửi tin nhắn
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+        <p class="mt-2 text-slate-700">
+            <i class="fa-brands fa-facebook text-teal-500"></i>  
+            <a href="https://facebook.com" class="hover:text-teal-600">Facebook cá nhân</a>
+        </p>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 text-slate-500 py-8 text-center border-t border-slate-900">
-        <div class="container mx-auto px-6">
-            <p>&copy; 2023 Đinh Thị Bé Hiền. All rights reserved.</p>
-            <p class="text-sm mt-2">Giảng viên Đại học Kiên Giang</p>
-        </div>
+
+    <!-- ========================= -->
+    <!-- 📌 FOOTER BẢN QUYỀN -->
+    <!-- ========================= -->
+
+    <footer class="w-full text-center py-6 mt-20 text-sm text-slate-600">
+        <a href="https://hienp0925004-bit.github.io/website/" class="text-teal-600 font-semibold hover:underline">weedy</a> © 2025 
+        by 
+        <a href="https://example.com" class="text-teal-600 font-semibold hover:underline">Hien</a> 
+        is licensed under 
+        <a href="https://creativecommons.org/licenses/by-nd/4.0/" class="text-teal-600 font-semibold hover:underline">CC BY-ND 4.0</a>
+
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+        <img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
-
-        // Close mobile menu when clicking a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-            });
-        });
-
-        // Navbar Scroll Effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                navbar.classList.add('shadow-md');
-            } else {
-                navbar.classList.remove('shadow-md');
-            }
-        });
-
-        // Simple Blob Animation CSS override
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes blob {
-                0% { transform: translate(0px, 0px) scale(1); }
-                33% { transform: translate(30px, -50px) scale(1.1); }
-                66% { transform: translate(-20px, 20px) scale(0.9); }
-                100% { transform: translate(0px, 0px) scale(1); }
-            }
-            .animate-blob {
-                animation: blob 7s infinite;
-            }
-            .animation-delay-2000 {
-                animation-delay: 2s;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Share Modal Logic
-        function openShareModal() {
-            const modal = document.getElementById('share-modal');
-            const urlInput = document.getElementById('share-url');
-            urlInput.value = window.location.href;
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeShareModal() {
-            const modal = document.getElementById('share-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        function copyLink() {
-            const urlInput = document.getElementById('share-url');
-            urlInput.select();
-            urlInput.setSelectionRange(0, 99999); // For mobile devices
-            navigator.clipboard.writeText(urlInput.value).then(() => {
-                const btn = document.getElementById('copy-btn');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-check"></i> Đã chép!';
-                btn.classList.add('bg-green-600', 'text-white');
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.remove('bg-green-600', 'text-white');
-                }, 2000);
-            });
-        }
-        
-        // Close modal on outside click
-        document.getElementById('share-modal').addEventListener('click', function(e) {
-            if (e.target === this) closeShareModal();
-        });
-    </script>
-
-    <!-- Share Modal -->
-    <div id="share-modal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-filter backdrop-blur-sm p-4">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-blob">
-            <div class="bg-slate-900 p-4 flex justify-between items-center">
-                <h3 class="text-white font-bold text-lg"><i class="fas fa-share-nodes text-teal-400 mr-2"></i>Chia sẻ Portfolio</h3>
-                <button onclick="closeShareModal()" class="text-slate-400 hover:text-white transition-colors">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="p-6">
-                <p class="text-slate-600 mb-4 text-sm">
-                    Sao chép đường dẫn bên dưới để gửi hồ sơ năng lực của bạn cho đồng nghiệp hoặc sinh viên.
-                </p>
-                
-                <div class="flex gap-2 mb-6">
-                    <input type="text" id="share-url" class="w-full bg-slate-50 border border-slate-300 text-slate-600 text-sm rounded-lg focus:ring-teal-500 focus:border-teal-500 block p-2.5" readonly>
-                    <button id="copy-btn" onclick="copyLink()" class="bg-slate-900 text-white rounded-lg px-4 py-2 hover:bg-slate-800 transition-colors font-medium min-w-[100px]">
-                        Sao chép
-                    </button>
-                </div>
-
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r">
-                    <div class="flex">
-                        <div class="flex-shrink-0">
-                            <i class="fas fa-info-circle text-blue-500"></i>
-                        </div>
-                        <div class="ml-3">
-                            <p class="text-sm text-blue-700">
-                                <strong>Lưu ý:</strong> Nếu bạn đang mở file trực tiếp (đuôi .html), người khác sẽ không xem được link này. Bạn cần đưa web lên host (như Netlify, Vercel) để có link công khai.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
